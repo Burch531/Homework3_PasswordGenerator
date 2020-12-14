@@ -11,3 +11,4 @@ https://github.com/Burch531/Homework3_PasswordGenerator
 Link to live site
 https://burch531.github.io/Homework3_PasswordGenerator/
 
+screenshot.rtf
