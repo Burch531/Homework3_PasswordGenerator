@@ -24,16 +24,18 @@ function generatePassword() {
         return;
     }
 
-// user can click ok or cancel for each variable 
+    // user can click ok or cancel for each variable 
     var confirmSpecialChar = confirm('Will this contain Special Characters?');
     var confirmUpperCase = confirm('Will this contain Upper Case letters?');
     var confirmLowerCase = confirm('Will this contain Lower Case letters?');
     var confirmNumber = confirm('Will this contains Numbers?');
-//if no options are picked function will end must have one variable for a password
+    //if no options are picked function will end must have one variable for a password
     if (!specialChar && !upperCase && !lowerCase && !number) {
         alert("You must pick at least one!!");
         return;
     }
+
+    //if statements that will create the choices from each of the confirm options
 
     if (confirmNumber) {
         choices = choices.concat(number)
@@ -52,15 +54,12 @@ function generatePassword() {
     }
 
     var password = "";
-
+    // for loop to create random password that will repeat the number of times that the user entered for the length of the password
     for (var i = 0; i < confirmNumLength; i++) {
         var randomCharacters = choices[Math.floor(Math.random() * choices.length)];
         password += randomCharacters
     }
 
-
-
-    console.log(password)
     return password;
 
 };
@@ -68,14 +67,11 @@ function generatePassword() {
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
-
     var passwordText = document.querySelector("#password");
-
     passwordText.value = password;
-
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-console.log(password);
+
