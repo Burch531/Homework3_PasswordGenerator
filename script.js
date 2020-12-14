@@ -6,21 +6,15 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var choices = [];
 
-
-
 var confirmNumLength = "";
-
-
-
 
 
 var generateBtn = document.querySelector("#generate");
 
-// Add event listener to generate button
-
-
+//function that start when button is clicked
 function generatePassword() {
     var confirmNumLength = parseInt(prompt("What is the length you would like your password, pick a number between 8 and 128?"));
+    //if and else if statements if user enters anything outside of 8-128 will end the function
     if (confirmNumLength < 8 || confirmNumLength > 128) {
         alert('Must be a number between 8 an 128');
         return;
@@ -30,12 +24,12 @@ function generatePassword() {
         return;
     }
 
-
+// user can click ok or cancel for each variable 
     var confirmSpecialChar = confirm('Will this contain Special Characters?');
     var confirmUpperCase = confirm('Will this contain Upper Case letters?');
     var confirmLowerCase = confirm('Will this contain Lower Case letters?');
     var confirmNumber = confirm('Will this contains Numbers?');
-
+//if no options are picked function will end must have one variable for a password
     if (!specialChar && !upperCase && !lowerCase && !number) {
         alert("You must pick at least one!!");
         return;
